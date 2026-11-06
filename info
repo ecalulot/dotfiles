@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Description: Display dotfiles repo information. 
+
+dotfiles_dir="$HOME/dotfiles"
+dir_count=$(ls "${dotfiles_dir}" | wc -l)
+
+today=$(date +%Y-%m-%d)
+
+#echo "Counting the number of dotfiles: ${dir_count}"
+echo "The setup script will symbolically link the dotfiles to the user's (${USER}) home directory in ${HOME}"
+echo -e "\n"
+
+echo "=== Dotfiles Info ==="
+echo "User: $USER"
+echo "Dotfiles location: ${dotfiles_dir}"
+echo "Files tracked: ${dir_count}"
+echo "Date: ${today}"
+echo "Exit code: $?"
