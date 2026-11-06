@@ -1,0 +1,5 @@
+alias bc='batcat'
+alias tls='tmux ls'
+alias t='tmux'
+alias sc='shellcheck'
+#alias kubectl='kc'
