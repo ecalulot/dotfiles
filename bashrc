@@ -119,3 +119,4 @@ fi
 # added 26Oct2026 as part of lesson 15 of Advanced Linux (KubeCraft Career Accelerator program)
 eval "$(starship init bash)"
 
+export PATH="$HOME/.local/bin:$PATH"

@@ -2,13 +2,19 @@
 
 # Description: Link dotfiles to home directory
 
+# --- start original code ---
 mkdir -p ~/.config
 
-ln -sf ~/dotfiles/bashrc ~/.bashrc
-ln -sf ~/dotfiles/vimrc ~/.vimrc
-ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
-ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles/bash_aliases ~/.bash_aliases
+link_file() {
+	for file in "${dotfile_arr[@]}"; do
+		ln -sf ~/dotfile/"${file}" ~/".${file}"
+		echo "File ${file} linked!"
+	done 
+}
 
-echo "Dotfiles linked!"
 
+dotfile_arr=("bashrc" "vimrc" "tmux.conf" "bash_aliases")
+
+ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml # hard code this one
+
+echo "Setup complete!"
