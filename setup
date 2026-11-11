@@ -7,7 +7,7 @@ mkdir -p ~/.config
 
 link_file() {
 	for file in "${dotfile_arr[@]}"; do
-		ln -sf ~/dotfile/"${file}" ~/".${file}"
+		ln -sf "$HOME/dotfile/${file}" "$HOME/.${file}"
 		echo "File ${file} linked!"
 	done 
 }
