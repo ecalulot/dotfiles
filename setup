@@ -7,11 +7,15 @@ dotfile_arr=("bashrc" "vimrc" "tmux.conf" "bash_aliases")
 mkdir -p ~/.config
 
 link_file() {
-	for file in "${dotfile_arr[@]}"; do
-		ln -sf "$HOME/dotfile/${file}" "$HOME/.${file}"
-		echo "File ${file} linked!"
-	done 
+	local src="$1"
+	local dst="$2"
+	ln -sf "${src}" "${dst}"
+	echo "File ${file} linked to ${dst}"
 }
+
+for file in "${dotfile_arr[@]}"; do
+	link_file "$HOME/dotfiles/${file}" "$HOME/.${file}"
+done 
 
 ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml # hard code this one
 
