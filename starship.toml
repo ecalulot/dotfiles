@@ -15,9 +15,12 @@ success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set
 [package]
 disabled = true
 
-
 [memory_usage]
 disabled = false
 threshold = -1
 symbol = ' '
 style = 'bold dimmed green'
+
+[netns]
+style = 'bold yellow'
+symbol = '🌐 '
