@@ -121,7 +121,6 @@ eval "$(starship init bash)"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-
 # added 18Nov2026 - vim key bindings on CLI
 set -o vi
 # esc puts you into Vim mode on the command line
